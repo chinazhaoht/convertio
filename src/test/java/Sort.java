@@ -1,3 +1,7 @@
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import shop.convertio.model.User;
+
 public class Sort {
 
 
@@ -52,5 +56,19 @@ public class Sort {
         }
     }
 
+    public static void main(String[] args) throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        User user1 = new User();
+        user1.setAge("12");
+        user1.setId("hello");
+        user1.setName("nihao");
+        user1.setSex("girl");
+
+
+
+        System.out.println(mapper.writeValueAsString(user1));
+
+
+    }
 
 }
